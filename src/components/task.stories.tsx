@@ -1,4 +1,3 @@
-
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { fn } from 'storybook/test';
@@ -10,7 +9,7 @@ export const ActionsData = {
   onPinTask: fn(),
 };
 
-const meta = {
+const meta = { 
   component: Task,
   title: 'Task',
   tags: ['autodocs'],
