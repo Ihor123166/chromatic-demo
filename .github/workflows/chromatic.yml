@@ -5,10 +5,6 @@ name: 'Chromatic Deployment'
 # Event for the workflow
 on: push
 
-defaults:
-  run:
-    working-directory: apps/taskbox
-
 # List of jobs
 jobs:
   chromatic:
@@ -19,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: yarn
+      - run: cd apps/taskbox && yarn
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@latest
         # Options required for Chromatic's GitHub Action
