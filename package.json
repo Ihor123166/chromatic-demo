@@ -26,6 +26,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "init-msw": "msw init public/",
+    "test-storybook": "test-storybook",
     "chromatic": "npx chromatic --project-token=chpt_9183e76b4ff4218"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "@storybook/addon-docs": "^10.1.11",
     "@storybook/addon-vitest": "^10.1.11",
     "@storybook/react-vite": "^10.1.11",
+    "@storybook/test-runner": "^0.24.2",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
