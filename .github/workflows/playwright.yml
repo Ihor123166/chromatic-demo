@@ -17,12 +17,12 @@ jobs:
       run: yarn playwright install chromium webkit
     # - name: Build Storybook
     #   run: yarn run build-storybook
-    - name: Run Storybook and Playwright tests
-      run: yarn storybook dev --ci -p 6006 & yarn playwright test 
-    # - name: Run Storybook 
-    #   run: yarn storybook dev --ci -p 6006
-    # - name: Run  Playwright tests
-    #   run: yarn playwright test 
+    # - name: Run Storybook and Playwright tests
+    #   run: yarn storybook dev --ci -p 6006 & yarn playwright test 
+    - name: Run Storybook 
+      run: yarn storybook dev --ci -p 6006 & yarn wait-on http://localhost:6006/
+    - name: Run  Playwright tests
+      run: yarn playwright test 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
