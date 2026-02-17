@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { fn } from 'storybook/test';
+import { fn } from 'storybook/test'
 
-import Task from './Task';
+import Task from './Task'
 
 export const ActionsData = {
   onArchiveTask: fn(),
   onPinTask: fn(),
-};
+}
 
-const meta = { 
+const meta = {
   component: Task,
   title: 'Task',
   tags: ['autodocs'],
@@ -18,10 +18,10 @@ const meta = {
   args: {
     ...ActionsData,
   },
-} satisfies Meta<typeof Task>;
+} satisfies Meta<typeof Task>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
@@ -31,7 +31,7 @@ export const Default: Story = {
       state: 'TASK_INBOX',
     },
   },
-};
+}
 
 export const Pinned: Story = {
   args: {
@@ -40,7 +40,7 @@ export const Pinned: Story = {
       state: 'TASK_PINNED',
     },
   },
-};
+}
 
 export const Archived: Story = {
   args: {
@@ -49,4 +49,4 @@ export const Archived: Story = {
       state: 'TASK_ARCHIVED',
     },
   },
-};
+}
