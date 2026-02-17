@@ -10,7 +10,13 @@ import InboxScreen from './InboxScreen'
 
 import store from '../lib/store'
 
-import { expect, userEvent, findByRole, within } from '@storybook/test'
+import {
+  expect,
+  userEvent,
+  findByRole,
+  within,
+  getByLabelText,
+} from '@storybook/test'
 
 const meta = {
   component: InboxScreen,
@@ -48,23 +54,39 @@ export const Error: Story = {
   },
 }
 
-// export const PinTask = {
-//   parameters: {
-//     ...Default.parameters,
-//   },
-//   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
-//     const canvas = within(canvasElement)
-//     const getTask = (id: any) => canvas.findByRole('listitem', { name: id })
+export const PinTask = {
+  parameters: {
+    ...Default.parameters,
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement)
+    const getTask = (id: string) => canvas.findByLabelText(id)
 
-//     const itemToPin = await getTask('task-4')
-//     // Find the pin button
-//     const pinButton = await findByRole(itemToPin, 'button', { name: 'pin' })
-//     // Click the pin button
-//     await userEvent.click(pinButton)
-//     // Check that the pin button is now a unpin button
-//     const unpinButton = within(itemToPin).getByRole('button', {
-//       name: 'unpin',
-//     })
-//     await expect(unpinButton).toBeInTheDocument()
-//   },
-// }
+    const itemToPin = await getTask('task-4')
+    // Find the pin button
+    const pinButton = await findByRole(itemToPin, 'button', {
+      name: 'pinTask-4',
+    })
+    // Click the pin button
+    await userEvent.click(pinButton)
+    // Check that the pin button is now a unpin button
+    const unpinButton = within(itemToPin).getByRole('button', {
+      name: 'pinTask-4',
+    })
+    await expect(unpinButton).toBeInTheDocument()
+  },
+}
+
+export const ArchiveTask = {
+  parameters: {
+    ...Default.parameters,
+  },
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+    const canvas = within(canvasElement)
+    const getTask = (id: string) => canvas.findByLabelText(id)
+
+    const itemToArchive = await getTask('task-2')
+    const archiveButton = await getByLabelText(itemToArchive, 'check-2')
+    await userEvent.click(archiveButton)
+  },
+}

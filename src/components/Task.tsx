@@ -12,7 +12,7 @@ export default function Task({
   onPinTask,
 }: TaskProps) {
   return (
-    <div className={`list-item ${state}`}>
+    <div className={`list-item ${state}`} aria-label={`task-${id}`}>
       <label
         htmlFor={`archiveTask-${id}`}
         aria-label={`archiveTask-${id}`}
@@ -25,7 +25,11 @@ export default function Task({
           id={`archiveTask-${id}`}
           checked={state === 'TASK_ARCHIVED'}
         />
-        <span className='checkbox-custom' onClick={() => onArchiveTask(id)} />
+        <span
+          className='checkbox-custom'
+          aria-label={`check-${id}`}
+          onClick={() => onArchiveTask(id)}
+        />
       </label>
 
       <label htmlFor={`title-${id}`} aria-label={title} className='title'>
