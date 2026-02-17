@@ -1694,12 +1694,10 @@ try {
                     _((p) => {
                       if (p.size === 1) {
                         let [R] = p.values()
-                        document
-                          .getElementById(R)
-                          ?.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center',
-                          })
+                        document.getElementById(R)?.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'center',
+                        })
                       }
                       return p
                     }))
@@ -1722,12 +1720,10 @@ try {
                   let he = `${p}.${R}.${ne + 1}`
                   ;(_(new Map([[`${p}.${R}`, he]])),
                     setTimeout(() => {
-                      document
-                        .getElementById(he)
-                        ?.scrollIntoView({
-                          behavior: 'smooth',
-                          block: 'center',
-                        })
+                      document.getElementById(he)?.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                      })
                     }, 100))
                 }
               }

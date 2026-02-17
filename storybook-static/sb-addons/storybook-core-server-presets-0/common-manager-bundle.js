@@ -24370,16 +24370,14 @@ Inner error message: ${n?.message}`)
             { style: { color: n.base } },
             '[\u2026]'
           )
-        let o = e
-            .slice(0, 3)
-            .map((a, l) =>
-              u.createElement(gr, {
-                key: `${l}--${JSON.stringify(a)}`,
-                value: a,
-                nested: !0,
-                callsById: r,
-              })
-            ),
+        let o = e.slice(0, 3).map((a, l) =>
+            u.createElement(gr, {
+              key: `${l}--${JSON.stringify(a)}`,
+              value: a,
+              nested: !0,
+              callsById: r,
+            })
+          ),
           i = sm(o, u.createElement('span', null, ', '))
         return e.length <= 3
           ? u.createElement('span', { style: { color: n.base } }, '[', i, ']')

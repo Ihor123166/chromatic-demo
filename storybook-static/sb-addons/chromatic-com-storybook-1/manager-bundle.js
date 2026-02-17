@@ -6572,12 +6572,10 @@ try {
               ;(o(!0),
                 d &&
                   setTimeout(() => {
-                    document
-                      .getElementById(`${d}-option`)
-                      ?.scrollIntoView({
-                        behavior: 'smooth',
-                        inline: 'nearest',
-                      })
+                    document.getElementById(`${d}-option`)?.scrollIntoView({
+                      behavior: 'smooth',
+                      inline: 'nearest',
+                    })
                   }, 200))
             },
             [o]
