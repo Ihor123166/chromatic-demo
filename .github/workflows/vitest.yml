@@ -14,4 +14,4 @@ jobs:
           fetch-depth: 0
       - run: yarn
       - run: yarn playwright install
-      - run: yarn vitest
+      - run: yarn test-storybook

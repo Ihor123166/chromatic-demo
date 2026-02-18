@@ -27,7 +27,6 @@
     "storybook-ci": "storybook --ci dev -p 6006",
     "build-storybook": "storybook build",
     "init-msw": "msw init public/",
-    "test-storybook": "test-storybook",
     "chromatic": "npx chromatic --project-token=chpt_9183e76b4ff4218",
     "prettier": "prettier . --write",
     "docker:build": "docker build --platform=linux/amd64 -t playwright-tests .",
