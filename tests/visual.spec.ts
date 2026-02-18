@@ -25,5 +25,7 @@ for (const story of stories)
       .frameLocator('#storybook-preview-iframe')
       .locator('#storybook-root')
 
-    await expect(locator).toHaveScreenshot()
+    await expect(locator).toHaveScreenshot({
+      mask: [page.locator('[href="/?path=/settings/whats-new"]')],
+    })
   })

@@ -90,3 +90,17 @@ export const ArchiveTask = {
     await userEvent.click(archiveButton)
   },
 }
+
+// export const ErrorTask = {
+//   parameters: {
+//     ...Default.parameters,
+//   },
+//   play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+//     const canvas = within(canvasElement)
+//     const getTask = (id: string) => canvas.findByLabelText(id)
+
+//     const itemToArchive = await getTask('task-888')
+//     const archiveButton = await getByLabelText(itemToArchive, 'check-2')
+//     await userEvent.click(archiveButton)
+//   },
+// }
