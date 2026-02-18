@@ -1,0 +1,13 @@
+[
+  "inboxscreen--default",
+  "inboxscreen--error",
+  "inboxscreen--pin-task",
+  "inboxscreen--archive-task",
+  "task--default",
+  "task--pinned",
+  "task--archived",
+  "tasklist--default",
+  "tasklist--with-pinned-tasks",
+  "tasklist--loading",
+  "tasklist--empty"
+]
