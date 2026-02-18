@@ -27,3 +27,4 @@ for (const story of stories)
 
     await expect(locator).toHaveScreenshot()
   })
+/// i need to run playwright screenshot tests inside docker file 

@@ -29,7 +29,9 @@
     "init-msw": "msw init public/",
     "test-storybook": "test-storybook",
     "chromatic": "npx chromatic --project-token=chpt_9183e76b4ff4218",
-    "prettier": "prettier . --write"
+    "prettier": "prettier . --write",
+    "docker:build": "docker build -t playwright-tests .",
+    "docker:test:specific": "docker run --rm -it -e ARGS='' -v $(pwd):/app -w /app playwright-tests"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.3",
