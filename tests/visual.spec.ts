@@ -19,10 +19,18 @@ const stories = JSON.parse(fileContent)
 
 for (const story of stories)
   test(`visual ${story}`, async ({ page, request }) => {
-    page.on('domcontentloaded', async () => {
-      await page.evaluate(() => {
-        document.querySelectorAll('[href="/?path=/settings/whats-new"]').forEach((el) => el.remove())
-      })
+    await page.addInitScript(() => {
+      const remove = () => {
+        const el = document.querySelector('[href*="whats-new"]')
+        if (el) el.remove()
+      }
+
+      // Remove immediately
+      remove()
+
+      // Remove if it appears later
+      const observer = new MutationObserver(remove)
+      observer.observe(document.body, { childList: true, subtree: true })
     })
 
     await page.goto(`http://localhost:6006/?path=/story/${story}`)
