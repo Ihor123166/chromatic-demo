@@ -15,6 +15,9 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    a11y: {
+      test: 'error',
+    },
   },
   loaders: [mswLoader],
 }

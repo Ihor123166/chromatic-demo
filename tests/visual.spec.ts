@@ -21,6 +21,14 @@ for (const story of stories)
   test(`visual ${story}`, async ({ page, request }) => {
     await page.goto(`http://localhost:6006/?path=/story/${story}`)
 
+    await page.addStyleTag({
+      content: `
+      [href*="whats-new"] {
+        visibility: hidden !important;
+      }
+    `,
+    })
+
     const locator = page
       .frameLocator('#storybook-preview-iframe')
       .locator('#storybook-root')
