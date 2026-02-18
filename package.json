@@ -30,8 +30,8 @@
     "test-storybook": "test-storybook",
     "chromatic": "npx chromatic --project-token=chpt_9183e76b4ff4218",
     "prettier": "prettier . --write",
-    "docker:build": "docker build -t playwright-tests .",
-    "docker:test:specific": "docker run --rm -it -e ARGS='' -v $(pwd):/app -w /app playwright-tests"
+    "docker:build": "docker build --platform=linux/amd64 -t playwright-tests .",
+    "docker:test:specific": "docker run --platform=linux/amd64 --rm -it -e ARGS='--workers=40%' -v $(pwd):/app -w /app playwright-tests"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.3",
