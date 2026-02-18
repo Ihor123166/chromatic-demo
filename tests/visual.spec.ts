@@ -19,14 +19,17 @@ const stories = JSON.parse(fileContent)
 
 for (const story of stories)
   test(`visual ${story}`, async ({ page, request }) => {
+    page.on('domcontentloaded', async () => {
+      await page.evaluate(() => {
+        document.querySelectorAll('[href="/?path=/settings/whats-new"]').forEach((el) => el.remove())
+      })
+    })
+
     await page.goto(`http://localhost:6006/?path=/story/${story}`)
 
     const locator = page
       .frameLocator('#storybook-preview-iframe')
       .locator('#storybook-root')
 
-    await page.evaluate(() => {
-      document.querySelector('.selector')?.remove()
-    })
     await expect(locator).toHaveScreenshot()
   })
