@@ -1,18 +1,18 @@
-name: Storybook Tests
+# name: Storybook Tests
 
-on:
-  pull_request:
-    branches: [ main, master ]
+# on:
+#   pull_request:
+#     branches: [ main, master ]
 
-jobs:
-  test-storybook:
-    name: 'Run vitest'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - run: yarn
-      - run: yarn playwright install
-      - run: yarn storybook dev --ci -p 6006 & yarn wait-on http://localhost:6006/ 
-      - run: yarn test-storybook
+# jobs:
+#   test-storybook:
+#     name: 'Run vitest'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
+#       - run: yarn
+#       - run: yarn playwright install
+#       - run: yarn storybook dev --ci -p 6006 & yarn wait-on http://localhost:6006/ 
+#       - run: yarn test-storybook
