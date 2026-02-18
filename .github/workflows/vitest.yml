@@ -5,7 +5,7 @@ on:
     branches: [ main, master ]
 
 jobs:
-  vitest:
+  test-storybook:
     name: 'Run vitest'
     runs-on: ubuntu-latest
     steps:
@@ -14,4 +14,4 @@ jobs:
           fetch-depth: 0
       - run: yarn
       - run: yarn playwright install
-      - run: yarn test-storybook
+      - run: yarn storybook dev --ci -p 6006 & yarn wait-on http://localhost:6006/ & yarn test-storybook
