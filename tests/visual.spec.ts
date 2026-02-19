@@ -2,18 +2,6 @@ import { test, expect } from '@playwright/test'
 import fs from 'fs'
 
 const path = 'tests/stories.json'
-// test.beforeAll(async ({ request }) => {
-//   const response = await request.get('http://localhost:6006/index.json')
-
-//   const body = await response.json()
-//   const stories = Object.keys(body.entries).filter(
-//     (str) => !str.includes('docs')
-//   )
-
-//   const jsonData = JSON.stringify(stories, null, 2)
-//   fs.writeFileSync(path, jsonData)
-// })
-
 const fileContent = fs.readFileSync(path, 'utf8')
 const stories = JSON.parse(fileContent)
 
