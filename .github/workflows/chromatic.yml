@@ -4,6 +4,7 @@ name: 'Chromatic Deployment'
 on:
   pull_request:
     branches: [ main, master ]
+  workflow_call:
 
 # List of jobs
 jobs:
